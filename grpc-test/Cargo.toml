@@ -1,0 +1,21 @@
+[package]
+name = "grpc-test"
+version = "0.1.0"
+authors = [
+    "n1c00o (https://github.com/n1c00o)"
+]
+edition = "2021"
+publish = false
+description = "Sample test of using the grpc crate inside a Tokio-based application"
+readme = "../README.md"
+repository = "https://github.com/n1c00o/grpc-rust-with-tokio"
+license = "BSD-3-Clause"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.20.0", features = [ "full" ] }
+tracing = "0.1.35"
+tracing-subscriber = { version = "0.3.14", features = ["parking_lot", "env-filter"] }
+parking_lot = "0.12.1"
+grpc = "0.8.3"
