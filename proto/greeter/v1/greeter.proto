@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package proto.greeter.v1;
+
+import "google/protobuf/timestamp.proto";
+
+// Payload use to get a greet
+message GetGreetRequest {
+  // User name
+  string name = 1;
+  // User age
+  uint32 age = 2;
+}
+
+// Response of a get greet
+message GetGreetResponse {
+  // the greet
+  string greeting = 1;
+  // Creation Timestamp of the greeting service
+  google.protobuf.Timestamp creation_timestamp = 2;
+}
+
+// A simple service that greets people
+service Greeter {
+  // Get a greet
+  rpc GetGreet(GetGreetRequest) returns (GetGreetResponse);
+}
